@@ -24,6 +24,12 @@ export const Profile = () => {
             </a>
           </div>
         </div>
+        <div className={styles.details_name}>
+          <span className={styles.primary_text}>
+            {''}
+            Hello, I'M <span className={styles.highlighted_text}>Tahara</span>
+          </span>
+        </div>
       </div>
     </div>
   )
