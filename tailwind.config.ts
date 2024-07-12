@@ -20,7 +20,18 @@ const config = {
       lg: '960px',
       xl: '1200px',
     },
+    fontFamily: {
+      primary: 'var(--font-jetbrainsMono)',
+      sans: 'var(--font-noto-sans-jp)',
+    },
     extend: {
+      colors: {
+        primary: '#1c1c22',
+        accent: {
+          DEFAULT: '#00ff99',
+          hover: '#00e187',
+        },
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },
