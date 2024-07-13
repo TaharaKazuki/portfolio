@@ -2,27 +2,17 @@ import { motion } from 'framer-motion';
 
 const stairAnimation = {
   initial: {
-    top: '0%',
+    right: '0%',
   },
   animate: {
-    top: '100%',
+    right: '100%',
   },
   exit: {
-    top: ['100%', '0%'],
+    left: ['100%', '0%'],
   },
 };
 
-const STEP = 7;
-
-const calculateHeight = (index: number) => {
-  const middleIndex = Math.floor(STEP / 2);
-  return `${20 + Math.abs(index - middleIndex) * 2}rem`;
-};
-
-const reverseIndex = (index: number) => {
-  const totalSteps = STEP;
-  return totalSteps - index - 1;
-};
+const STEP = 6;
 
 const Stairs = () => {
   return (
@@ -36,16 +26,13 @@ const Stairs = () => {
             animate="animate"
             exit="exit"
             transition={{
-              duration: 0.3,
+              duration: 0.5,
               ease: 'easeInOut',
-              delay: reverseIndex(index) * 0.1,
+              delay: index * 0.1,
             }}
             className="relative flex size-full flex-col items-center justify-center xl:p-8"
           >
-            <div
-              className="w-2 rounded-full bg-accent neon-accent xl:w-6"
-              style={{ height: calculateHeight(index) }}
-            />
+            <div className="h-2 w-4 rounded-full bg-accent neon-accent xl:h-2 xl:w-6" />
           </motion.div>
         );
       })}
