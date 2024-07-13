@@ -47,7 +47,7 @@ const Stairs = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <motion.div
-        className="absolute left-1/2 top-1/2 h-[2px] origin-center bg-black"
+        className="absolute left-1/2 top-1/2 h-[2px] origin-center bg-accent"
         variants={diagonalLineAnimation}
         initial="initial"
         animate="animate"
