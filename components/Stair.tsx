@@ -28,15 +28,22 @@ const splitAnimationRight = {
   },
 };
 
+const generateRandomSize = () => {
+  const sizes = ['h-16', 'h-32', 'h-48'];
+  const cols = ['col-span-1', 'col-span-2'];
+  return `${sizes[Math.floor(Math.random() * sizes.length)]} ${
+    cols[Math.floor(Math.random() * cols.length)]
+  }`;
+};
+
 const generateGridItems = (count: number) => {
-  const sizes = ['h-16', 'h-32', 'h-48', 'h-64'];
   return [...Array(count)].map((_, i) => (
     <div
       key={i}
-      className={`flex items-center justify-center bg-accent ${
-        sizes[i % sizes.length]
-      }`}
-    ></div>
+      className={`flex items-center justify-center whitespace-pre-wrap border border-accent bg-primary text-accent ${generateRandomSize()}`}
+    >
+      hoanbaouganobagajlgahblnalgaguoaba
+    </div>
   ));
 };
 
