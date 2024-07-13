@@ -1,7 +1,9 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { JetBrains_Mono, Noto_Sans_JP } from 'next/font/google';
-import './global.css';
+
+import './globals.css';
+import Header from '@/components/Header';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -27,6 +29,7 @@ export default function RootLayout({
   return (
     <html lang="jp">
       <body className={clsx(jetbrainsMono.variable, notoSansJP.variable)}>
+        <Header />
         {children}
       </body>
     </html>
