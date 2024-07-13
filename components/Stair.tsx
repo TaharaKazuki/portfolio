@@ -34,10 +34,8 @@ const Stairs = () => {
               ease: 'easeInOut',
               delay: reverseIndex(index) * 0.1,
             }}
-            className="relative flex size-full flex-row gap-2 p-16"
+            className="relative flex size-full flex-col items-center p-16"
           >
-            <div className="h-full w-2 rounded-full bg-accent neon-accent" />
-            <div className="h-full w-2 rounded-full bg-accent neon-accent" />
             <div className="h-full w-2 rounded-full bg-accent neon-accent" />
           </motion.div>
         );
