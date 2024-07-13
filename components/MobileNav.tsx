@@ -20,11 +20,11 @@ const MobileNav = () => {
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
-        <div className="mb-40 mt-32 text-center text-2xl">
+        <div className="mb-24 mt-16 text-center text-2xl">
           <Logo />
         </div>
 
-        <nav className="flex flex-col items-center justify-center gap-8">
+        <nav className="flex flex-col items-stretch justify-center gap-8">
           {LINKS.map((link, i) => {
             const isActive = link.path === pathname;
             return (
