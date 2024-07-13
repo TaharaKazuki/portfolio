@@ -14,27 +14,17 @@ const stairAnimation = {
   },
 };
 
-const RAINBOW_STEP = 7;
-
-const RAINBOW_COLORS = [
-  'bg-red-400',
-  'bg-orange-400',
-  'bg-yellow-400',
-  'bg-green-400',
-  'bg-blue-400',
-  'bg-indigo-400',
-  'bg-purple-400',
-];
+const STEP = 7;
 
 const reverseIndex = (index: number) => {
-  const totalStep = RAINBOW_STEP;
+  const totalStep = STEP;
   return totalStep - index - 1;
 };
 
 const Stairs = () => {
   return (
     <>
-      {[...Array(RAINBOW_STEP)].map((_, i) => (
+      {[...Array(STEP)].map((_, i) => (
         <motion.div
           key={i}
           variants={stairAnimation}
@@ -46,7 +36,7 @@ const Stairs = () => {
             ease: 'easeInOut',
             delay: reverseIndex(i) * 0.1,
           }}
-          className={cn('relative size-full', RAINBOW_COLORS[i])}
+          className={cn('relative size-full bg-white')}
         />
       ))}
     </>
