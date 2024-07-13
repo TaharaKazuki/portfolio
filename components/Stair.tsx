@@ -1,20 +1,5 @@
 import { motion } from 'framer-motion';
 
-const diagonalLineAnimation = {
-  initial: {
-    scaleX: 0,
-    rotate: 45,
-    x: '-50%',
-  },
-  animate: {
-    scaleX: 1,
-    transition: {
-      duration: 1,
-      ease: 'easeInOut',
-    },
-  },
-};
-
 const splitAnimationLeft = {
   initial: {
     x: 0,
@@ -24,7 +9,7 @@ const splitAnimationLeft = {
     transition: {
       duration: 1,
       ease: 'easeInOut',
-      delay: 1,
+      delay: 0.5,
     },
   },
 };
@@ -38,32 +23,46 @@ const splitAnimationRight = {
     transition: {
       duration: 1,
       ease: 'easeInOut',
-      delay: 1,
+      delay: 0.5,
     },
   },
+};
+
+const generateGridItems = (count: number) => {
+  const sizes = ['h-16', 'h-32', 'h-48', 'h-64'];
+  return [...Array(count)].map((_, i) => (
+    <div
+      key={i}
+      className={`flex items-center justify-center bg-accent ${
+        sizes[i % sizes.length]
+      }`}
+    ></div>
+  ));
 };
 
 const Stairs = () => {
   return (
     <div className="relative h-screen w-full overflow-hidden">
       <motion.div
-        className="absolute left-1/2 top-1/2 h-[2px] origin-center bg-accent"
-        variants={diagonalLineAnimation}
-        initial="initial"
-        animate="animate"
-      />
-      <motion.div
-        className="absolute left-0 top-0 h-full w-1/2 bg-white"
+        className="absolute left-0 top-0 h-full w-1/2 bg-primary"
         variants={splitAnimationLeft}
         initial="initial"
         animate="animate"
-      />
+      >
+        <div className="grid grid-cols-3 gap-4 p-4">
+          {generateGridItems(20)}
+        </div>
+      </motion.div>
       <motion.div
-        className="absolute right-0 top-0 h-full w-1/2 bg-white"
+        className="absolute right-0 top-0 h-full w-1/2 bg-primary"
         variants={splitAnimationRight}
         initial="initial"
         animate="animate"
-      />
+      >
+        <div className="grid grid-cols-4 gap-4 p-4">
+          {generateGridItems(30)}
+        </div>
+      </motion.div>
     </div>
   );
 };
