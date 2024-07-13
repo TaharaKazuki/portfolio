@@ -4,6 +4,7 @@ import { JetBrains_Mono, Noto_Sans_JP } from 'next/font/google';
 
 import './globals.css';
 import Header from '@/components/Header';
+import PageTransition from '@/components/PageTransition';
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
@@ -30,7 +31,7 @@ export default function RootLayout({
     <html lang="jp">
       <body className={clsx(jetbrainsMono.variable, notoSansJP.variable)}>
         <Header />
-        {children}
+        <PageTransition>{children}</PageTransition>
       </body>
     </html>
   );
