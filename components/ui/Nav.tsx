@@ -30,10 +30,10 @@ const Nav = () => {
             </span>
             <span
               className={cn(
-                'absolute bottom-0 h-[2px] bg-accent transition-all duration-300',
+                'absolute bottom-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
                 isActive
                   ? 'left-0 w-full'
-                  : 'left-1/2 w-0 group-hover:left-0 group-hover:w-full'
+                  : 'left-1/2 w-0 group-hover:left-0 group-hover:w-full group-hover:neon-accent'
               )}
               style={{ transformOrigin: 'center' }}
             ></span>
