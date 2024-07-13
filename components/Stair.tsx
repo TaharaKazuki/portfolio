@@ -26,13 +26,13 @@ const Stairs = () => {
             animate="animate"
             exit="exit"
             transition={{
-              duration: 0.5,
-              ease: 'easeInOut',
+              duration: 0.4,
+              ease: 'easeIn',
               delay: index * 0.1,
             }}
             className="relative flex size-full flex-col items-center justify-center xl:p-8"
           >
-            <div className="h-2 w-4 rounded-full bg-accent neon-accent xl:h-2 xl:w-6" />
+            <div className="h-2 w-10 rounded-full bg-accent neon-accent xl:h-2 xl:w-20" />
           </motion.div>
         );
       })}
