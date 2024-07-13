@@ -13,6 +13,7 @@ import { cn } from '@/lib/utils';
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const closeMobileMenu = () => setIsOpen(false);
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -21,7 +22,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         <div className="mb-24 mt-16 text-center text-2xl">
-          <Logo />
+          <Logo onClickHandler={closeMobileMenu} />
         </div>
 
         <nav className="flex flex-col items-stretch justify-center gap-8">
@@ -32,7 +33,7 @@ const MobileNav = () => {
                 href={link.path}
                 key={i}
                 className="group relative"
-                onClick={() => setIsOpen(false)}
+                onClick={closeMobileMenu}
               >
                 <span
                   className={cn(
