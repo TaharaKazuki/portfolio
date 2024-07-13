@@ -13,7 +13,7 @@ const stairAnimation = {
   },
 };
 
-const STEP = 10;
+const STEP = 8;
 const reverseIndex = (index: number) => {
   const totalSteps = STEP;
   return totalSteps - index - 1;
@@ -35,7 +35,7 @@ const Stairs = () => {
               ease: 'easeInOut',
               delay: reverseIndex(index) * 0.1,
             }}
-            className="relative size-full bg-accent"
+            className="relative size-full neon-accent"
           />
         );
       })}
