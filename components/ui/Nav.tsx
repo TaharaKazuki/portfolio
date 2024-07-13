@@ -2,14 +2,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { LINKS } from '@/app/_const';
 import { cn } from '@/lib/utils';
-
-const LINKS = [
-  { path: '/', name: 'home' },
-  { path: '/services', name: 'services' },
-  { path: '/resume', name: 'resume' },
-  { path: '/work', name: 'work' },
-];
 
 const Nav = () => {
   const pathname = usePathname();
