@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useState } from 'react';
 import { CiMenuFries } from 'react-icons/ci';
 
 import Logo from './Logo';
@@ -10,10 +11,11 @@ import { LINKS } from '@/app/_const';
 import { cn } from '@/lib/utils';
 
 const MobileNav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
   return (
-    <Sheet>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="flex items-center justify-center">
         <CiMenuFries className="text-[32px] text-accent" />
       </SheetTrigger>
@@ -26,11 +28,16 @@ const MobileNav = () => {
           {LINKS.map((link, i) => {
             const isActive = link.path === pathname;
             return (
-              <Link href={link.path} key={i} className="group relative">
+              <Link
+                href={link.path}
+                key={i}
+                className="group relative"
+                onClick={() => setIsOpen(false)}
+              >
                 <span
                   className={cn(
                     'font-medium capitalize transition-all',
-                    isActive ? 'text-accent' : 'group-hover:text-accent'
+                    isActive ? 'text-accent' : 'group-active:text-accent'
                   )}
                 >
                   {link.name}
@@ -40,7 +47,7 @@ const MobileNav = () => {
                     'absolute bottom-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
                     isActive
                       ? 'left-0 w-full'
-                      : 'left-1/2 w-0 group-hover:left-0 group-hover:w-full group-hover:neon-accent'
+                      : 'left-1/2 w-0 group-active:left-0 group-active:w-full group-active:neon-accent'
                   )}
                   style={{ transformOrigin: 'center' }}
                 ></span>
