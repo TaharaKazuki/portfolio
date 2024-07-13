@@ -16,7 +16,7 @@ const STEP = 7;
 
 const calculateHeight = (index: number) => {
   const middleIndex = Math.floor(STEP / 2);
-  return `${25 + Math.abs(index - middleIndex) * 5}rem`; // 高さを動的に計算
+  return `${20 + Math.abs(index - middleIndex) * 2}rem`;
 };
 
 const reverseIndex = (index: number) => {
@@ -43,7 +43,7 @@ const Stairs = () => {
             className="relative flex size-full flex-col items-center justify-center xl:p-8"
           >
             <div
-              className="w-2 rounded-full bg-accent neon-accent"
+              className="w-2 rounded-full bg-accent neon-accent xl:w-6"
               style={{ height: calculateHeight(index) }}
             />
           </motion.div>
