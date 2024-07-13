@@ -45,12 +45,10 @@ const MobileNav = () => {
                 </span>
                 <span
                   className={cn(
-                    'absolute bottom-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
-                    isActive
-                      ? 'left-0 w-full'
-                      : 'left-1/2 w-0 group-active:left-0 group-active:w-full group-active:neon-accent'
+                    'absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
+                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   )}
-                  style={{ transformOrigin: 'center' }}
+                  style={{ transformOrigin: 'left center' }}
                 ></span>
               </Link>
             );
