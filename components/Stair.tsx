@@ -32,7 +32,7 @@ const Stairs = () => {
             }}
             className="relative flex size-full flex-col items-center justify-center xl:p-8"
           >
-            <div className="h-2 w-10 rounded-full bg-accent neon-accent xl:h-2 xl:w-20" />
+            <div className="h-2 w-10 rounded-full bg-accent neon-accent xl:h-2 xl:w-36" />
           </motion.div>
         );
       })}
