@@ -10,7 +10,8 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/">
           <h1 className="text-4xl font-semibold">
-            DK<span className="text-accent">.</span>
+            DK
+            <span className="ml-2 inline-block size-2 rounded-full bg-accent neon-accent" />
           </h1>
         </Link>
 
