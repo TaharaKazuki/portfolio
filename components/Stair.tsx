@@ -12,7 +12,7 @@ const stairAnimation = {
   },
 };
 
-const STEP = 10;
+const STEP = 8;
 const reverseIndex = (index: number) => {
   const totalSteps = STEP;
   return totalSteps - index - 1;
@@ -34,7 +34,7 @@ const Stairs = () => {
               ease: 'easeInOut',
               delay: reverseIndex(index) * 0.1,
             }}
-            className="relative flex size-full flex-col items-center p-16"
+            className="relative flex size-full flex-col items-center p-8"
           >
             <div className="h-full w-2 rounded-full bg-accent neon-accent" />
           </motion.div>
