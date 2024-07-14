@@ -1,16 +1,16 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import { JetBrains_Mono, Noto_Sans_JP } from 'next/font/google';
+import { Noto_Sans_JP, Chakra_Petch } from 'next/font/google';
 
 import './globals.css';
 import Header from '@/components/Header';
 import PageTransition from '@/components/PageTransition';
 import StairTransition from '@/components/StairTransition';
 
-const jetbrainsMono = JetBrains_Mono({
+const chakraPetch = Chakra_Petch({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-  variable: '--font-jetbrainsMono',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-chakraPetch',
 });
 
 const notoSansJP = Noto_Sans_JP({
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="jp">
-      <body className={clsx(jetbrainsMono.variable, notoSansJP.variable)}>
+      <body className={clsx(chakraPetch.variable, notoSansJP.variable)}>
         <Header />
         <StairTransition />
         <PageTransition>{children}</PageTransition>
