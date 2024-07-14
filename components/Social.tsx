@@ -15,7 +15,7 @@ export const socialLinks = [
   },
   {
     href: 'https://github.com/taharakazuki',
-    icon: <FaGithub className="size-7 text-accent group-hover:text-accent" />,
+    icon: <FaGithub className="size-6 text-accent group-hover:text-accent" />,
     text: 'Github',
     textColor: 'text-accent',
   },

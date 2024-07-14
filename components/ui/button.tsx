@@ -13,7 +13,7 @@ const buttonVariants = cva(
           'bg-accent text-primary transition-all duration-300 hover:neon-accent',
         primary: 'bg-primary text-white',
         outline:
-          'border border-accent bg-transparent text-accent transition-all duration-300 active:neon-accent active:text-neon-accent xl:hover:neon-accent xl:hover:text-neon-accent',
+          'border-2 border-accent bg-transparent text-accent transition-all duration-300 active:neon-accent active:text-neon-accent xl:hover:neon-accent xl:hover:text-neon-accent',
       },
       size: {
         default: 'h-[44px] px-6',
