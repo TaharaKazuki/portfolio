@@ -14,7 +14,7 @@ const Header = () => {
         <div className="hidden max-w-[500px] flex-1 items-center justify-between rounded-full bg-accent/5 p-3 neon-accent xl:flex">
           <Nav />
           <Link href="/contact">
-            <Button variant={'outline'}>Hi There</Button>
+            <Button variant={'outline'}>Contact with Me</Button>
           </Link>
         </div>
         <div />
