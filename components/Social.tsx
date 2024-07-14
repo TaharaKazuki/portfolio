@@ -6,20 +6,20 @@ import {
   FaXTwitter,
 } from 'react-icons/fa6';
 
+import { cn } from '@/lib/utils';
+
 export const socialLinks = [
   {
     href: '',
     icon: (
       <FaFacebookF className="text-xl text-accent group-hover:text-accent" />
     ),
-    hoverColor: '',
     text: 'Facebook',
     textColor: 'text-accent',
   },
   {
-    href: '',
+    href: 'https://github.com/taharakazuki',
     icon: <FaGithub className="text-xl text-accent group-hover:text-accent" />,
-    hoverColor: '',
     text: 'Github',
     textColor: 'text-accent',
   },
@@ -28,7 +28,6 @@ export const socialLinks = [
     icon: (
       <FaInstagram className="text-xl text-accent group-hover:text-accent" />
     ),
-    hoverColor: '',
     text: 'Instagram',
     textColor: 'text-accent',
   },
@@ -37,7 +36,6 @@ export const socialLinks = [
     icon: (
       <FaXTwitter className="text-xl text-accent group-hover:text-accent" />
     ),
-    hoverColor: '',
     text: 'X(Twitter)',
     textColor: 'text-accent',
   },
@@ -52,13 +50,13 @@ const Social = () => {
           href={link.href}
           className="button group flex items-center"
         >
-          <div
-            className={`icon ${link.hoverColor} flex items-center justify-center`}
-          >
+          <div className="icon flex items-center justify-center">
             {link.icon}
           </div>
           <span
-            className={`ml-2 hidden group-hover:inline-block ${link.textColor}`}
+            className={cn(
+              `ml-2 hidden group-hover:inline-block ${link.textColor}`
+            )}
           >
             {link.text}
           </span>
