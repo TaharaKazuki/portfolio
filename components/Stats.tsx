@@ -15,8 +15,8 @@ const STATS_INFO = [
     text: 'Technologies mastered',
   },
   {
-    num: 400,
-    text: 'contributions in 2024',
+    num: 450,
+    text: 'over contributions in 2024',
   },
 ];
 
