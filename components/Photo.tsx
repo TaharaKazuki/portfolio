@@ -6,11 +6,10 @@ const Photo = () => {
   return (
     <div className="relative size-full">
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ opacity: 0 }}
         animate={{
-          y: 0,
           opacity: 1,
-          transition: { delay: 1, duration: 0.4, ease: 'easeIn' },
+          transition: { delay: 2, duration: 0.4, ease: 'easeIn' },
         }}
       >
         <motion.div
@@ -18,7 +17,7 @@ const Photo = () => {
           animate={{
             y: 0,
             opacity: 1,
-            transition: { delay: 2.4, duration: 0.4, ease: 'easeInOut' },
+            transition: { delay: 2.5, duration: 0.4, ease: 'easeIn' },
           }}
           className="absolute left-3 size-[280px] mix-blend-lighten xl:size-[480px]"
         >
