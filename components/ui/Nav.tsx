@@ -9,7 +9,7 @@ const Nav = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="flex gap-8">
+    <nav className="flex gap-8 pl-3">
       {LINKS.map((link, i) => {
         const isActive = link.path === pathname;
         return (
