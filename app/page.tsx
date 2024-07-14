@@ -1,5 +1,6 @@
 import { FiDownload } from 'react-icons/fi';
 
+import Social from '@/components/Social';
 import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
@@ -23,10 +24,12 @@ const HomePage = () => {
                 size="lg"
                 className="flex items-center gap-2 uppercase"
               >
-                <span>Download PDF</span>
+                <span>Download CV</span>
                 <FiDownload className="text-xl" />
               </Button>
-              <div className="mb-8 xl:mb-0"></div>
+              <div className="mb-8 xl:mb-0">
+                <Social />
+              </div>
             </div>
           </div>
           <div>Photo</div>
