@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
 import { FaMobileAlt, FaPalette, FaHandHoldingHeart } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
 
@@ -31,7 +30,7 @@ const SERVICES_INFO = [
   },
   {
     icon: (
-      <FaHandHoldingHeart className="text-white duration-500 group-hover:text-accent" />
+      <FaHandHoldingHeart className="text-white duration-500 group-hover:xl:text-accent" />
     ),
     title: 'Technical Contribution',
     description:
@@ -46,17 +45,7 @@ const ServicePage = () => {
         <h1 className="mb-2 text-4xl font-semibold">Services</h1>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {SERVICES_INFO.map((service, i) => (
-            <motion.div
-              initial={{ y: 100, opacity: 0 }}
-              animate={{
-                y: 0,
-                opacity: 1,
-                transition: {
-                  delay: 3 * (i + 1),
-                  duration: 0.2,
-                  ease: 'easeInOut',
-                },
-              }}
+            <div
               key={i}
               className="group flex h-full flex-1 flex-col justify-center gap-6 rounded-lg border-2 border-accent p-5 transition-all duration-500 hover:xl:neon-accent"
             >
@@ -70,7 +59,7 @@ const ServicePage = () => {
                 {service.title}
               </h2>
               <p className="text-white/60">{service.description}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
