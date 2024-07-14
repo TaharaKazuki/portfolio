@@ -11,16 +11,16 @@ const HomePage = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center justify-between xl:flex-row xl:pb-24 xl:pt-8">
           <div className="order-2 text-center xl:order-none xl:text-left">
-            <span className="text-xl text-neon-accent">Frontend Developer</span>
+            <span className="text-xl text-accent">Frontend Developer</span>
             <h1 className="h1 mb-6">
               Hello I&apos;m <br />
-              <span className="text-neon-accent">DK</span>
+              <span className="text-accent">DK</span>
             </h1>
             <p className="mb-9 max-w-[500px] text-white/80">
               I specialize in the frontend domain and excel at it, with a
               particular emphasis on a strong proficiency in{' '}
-              <span className="text-neon-accent">TypeScript</span> &{' '}
-              <span className="text-neon-accent">UX</span>
+              <span className="text-accent">TypeScript</span> &{' '}
+              <span className="text-accent">UX</span>
             </p>
 
             <div className="flex flex-col items-center gap-8 xl:flex-row">

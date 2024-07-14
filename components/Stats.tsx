@@ -39,7 +39,7 @@ const Stats = () => {
                     className="text-4xl font-extrabold xl:text-6xl"
                   />
                 </div>
-                <p className="max-w-[150px] text-left leading-snug text-neon-accent xl:text-left">
+                <p className="max-w-[150px] text-left leading-snug text-accent xl:text-left">
                   {item.text}
                 </p>
               </div>
