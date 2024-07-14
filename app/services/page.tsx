@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import { FaMobileAlt, FaPalette, FaHandHoldingHeart } from 'react-icons/fa';
 import { SiNextdotjs } from 'react-icons/si';
 
@@ -42,7 +43,15 @@ const ServicePage = () => {
     <section className="flex min-h-[80vh] flex-col justify-center py-4 xl:py-0">
       <div className="container mx-auto">
         <h1 className="mb-2 text-4xl font-semibold">Services</h1>
-        <div className="grid grid-cols-1 gap-[40px] md:grid-cols-2">
+        <motion.div
+          initial={{ y: -100, opacity: 0 }}
+          animate={{
+            y: 0,
+            opacity: 1,
+            transition: { delay: 3.5, duration: 0.4, ease: 'easeIn' },
+          }}
+          className="grid grid-cols-1 gap-[40px] md:grid-cols-2"
+        >
           {SERVICES_INFO.map((service, i) => (
             <div
               key={i}
@@ -60,7 +69,7 @@ const ServicePage = () => {
               <p className="text-white/60">{service.description}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
