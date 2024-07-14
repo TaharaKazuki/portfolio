@@ -10,7 +10,7 @@ type LogoProps = {
 const Logo = ({ onClickHandler }: LogoProps) => {
   return (
     <>
-      <Link href="" className="group relative">
+      <Link href="/" className="group relative" onClick={onClickHandler}>
         <h1
           className={cn(
             'capitalize transition-all group-hover:text-neon-accent text-4xl font-semibold duration-300 xl:hover:text-neon-accent'

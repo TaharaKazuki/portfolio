@@ -19,8 +19,8 @@ const HomePage = () => {
             <p className="mb-9 max-w-[500px] text-white/80">
               I specialize in the frontend domain and excel at it, with a
               particular emphasis on a strong proficiency in{' '}
-              <span className="text-accent">TypeScript</span> &{' '}
-              <span className="text-accent">UX</span>
+              <span className="font-semibold text-accent">TypeScript</span> &{' '}
+              <span className="font-semibold text-accent">UX</span>
             </p>
 
             <div className="flex flex-col items-center gap-8 xl:flex-row">
