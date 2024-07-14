@@ -2,6 +2,7 @@ import { FiDownload } from 'react-icons/fi';
 
 import Photo from '@/components/Photo';
 import Social from '@/components/Social';
+import Stats from '@/components/Stats';
 import { Button } from '@/components/ui/button';
 
 const HomePage = () => {
@@ -40,6 +41,7 @@ const HomePage = () => {
             <Photo />
           </div>
         </div>
+        <Stats />
       </div>
     </section>
   );
