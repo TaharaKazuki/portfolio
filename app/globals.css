@@ -27,3 +27,17 @@
     -webkit-text-stroke: 1px #00ff99;
   }
 }
+
+@layer utilities {
+  .wrapper .button {
+    @apply flex size-8 overflow-hidden border border-accent rounded-full cursor-pointer transition-all duration-300 ease-out;
+  }
+
+  .wrapper .button:hover {
+    @apply w-32 neon-accent;
+  }
+
+  .wrapper .button .icon {
+    @apply flex size-8  text-center rounded-full box-border transition-all duration-300 ease-out;
+  }
+}
