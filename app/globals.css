@@ -28,6 +28,7 @@
   }
 }
 
+/* TODO custom化する */
 @layer utilities {
   .wrapper .button {
     @apply flex size-8 overflow-hidden border border-accent rounded-full cursor-pointer transition-all duration-300 ease-out;

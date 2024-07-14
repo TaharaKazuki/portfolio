@@ -1,5 +1,6 @@
 import { FiDownload } from 'react-icons/fi';
 
+import Photo from '@/components/Photo';
 import Social from '@/components/Social';
 import { Button } from '@/components/ui/button';
 
@@ -32,7 +33,9 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div>Photo</div>
+          <div>
+            <Photo />
+          </div>
         </div>
       </div>
     </section>
