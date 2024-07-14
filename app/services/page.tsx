@@ -26,7 +26,8 @@ const SERVICES_INFO = [
       <FaPalette className="text-white duration-500 group-hover:xl:text-accent" />
     ),
     title: 'Logo Design',
-    description: 'Canvaを使いLogo制作を行えます。当サイトLogoも自作しました。',
+    description:
+      '実務経験はありませんがCanvaを使いLogo制作を行えます。当サイトLogoも自作しました。',
   },
   {
     icon: (
@@ -43,17 +44,19 @@ const ServicePage = () => {
     <section className="flex min-h-[80vh] flex-col justify-center py-4 xl:py-0">
       <div className="container mx-auto">
         <h1 className="mb-2 text-4xl font-semibold">Services</h1>
-        <motion.div
-          initial={{ y: -100, opacity: 0 }}
-          animate={{
-            y: 0,
-            opacity: 1,
-            transition: { delay: 3.5, duration: 0.4, ease: 'easeIn' },
-          }}
-          className="grid grid-cols-1 gap-[40px] md:grid-cols-2"
-        >
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
           {SERVICES_INFO.map((service, i) => (
-            <div
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: {
+                  delay: 3 * (i + 1),
+                  duration: 0.2,
+                  ease: 'easeInOut',
+                },
+              }}
               key={i}
               className="group flex h-full flex-1 flex-col justify-center gap-6 rounded-lg border-2 border-accent p-5 transition-all duration-500 hover:xl:neon-accent"
             >
@@ -67,9 +70,9 @@ const ServicePage = () => {
                 {service.title}
               </h2>
               <p className="text-white/60">{service.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

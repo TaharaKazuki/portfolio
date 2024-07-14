@@ -16,7 +16,7 @@ const STATS_INFO = [
   },
   {
     num: 450,
-    text: 'over contributions in 2024',
+    text: 'over contributions of My Github in 2024',
   },
 ];
 
