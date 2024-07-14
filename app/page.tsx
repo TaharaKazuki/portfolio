@@ -11,7 +11,9 @@ const HomePage = () => {
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center justify-between xl:flex-row xl:pb-24 xl:pt-8">
           <div className="order-2 text-center xl:order-none xl:text-left">
-            <span className="text-xl text-accent">Frontend Developer</span>
+            <span className="text-xl font-semibold text-accent">
+              Frontend Developer
+            </span>
             <h1 className="h1 mb-6">
               Hello I&apos;m <br />
               <span className="text-accent">DK</span>

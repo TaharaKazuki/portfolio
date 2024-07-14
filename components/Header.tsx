@@ -11,7 +11,7 @@ const Header = () => {
     <header className="py-8 text-white xl:py-12">
       <div className="container mx-auto flex items-center justify-between">
         <Logo />
-        <div className="hidden max-w-[500px] flex-1 items-center justify-between rounded-full p-3 neon-accent xl:flex">
+        <div className="hidden max-w-[500px] flex-1 items-center justify-between rounded-full bg-accent/5 p-3 neon-accent xl:flex">
           <Nav />
           <Link href="/contact">
             <Button variant={'outline'}>Hi There</Button>
