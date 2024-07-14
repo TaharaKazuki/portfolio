@@ -15,3 +15,26 @@ export const customNeonColor = (plugins: PluginAPI) => {
   }
   addUtilities(neonUtilities);
 };
+
+export const customNeonText = (plugins: PluginAPI) => {
+  const neonTextUtilities: Record<
+    string,
+    { color: string; textShadow: string }
+  > = {};
+  const { addUtilities, theme } = plugins;
+  const colors = theme('colors');
+
+  for (const color in colors) {
+    if (typeof colors[color] === 'object') {
+      const color1 = colors[color]['500'] || colors[color]['DEFAULT'];
+      const color2 = colors[color]['700'] || colors[color]['hover'];
+      if (color1 && color2) {
+        neonTextUtilities[`.text-neon-${color}`] = {
+          color: color1,
+          textShadow: `0 0 1px ${color1}, 0 0 1px ${color1}, 0 0 1px ${color1}, 0 0 4px ${color2}, 0 0 1px ${color1}`,
+        };
+      }
+    }
+  }
+  addUtilities(neonTextUtilities);
+};

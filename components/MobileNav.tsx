@@ -38,7 +38,9 @@ const MobileNav = () => {
                 <span
                   className={cn(
                     'font-medium capitalize transition-all',
-                    isActive ? 'text-accent' : 'group-active:text-accent'
+                    isActive
+                      ? 'text-neon-accent'
+                      : 'group-active:text-neon-accent'
                   )}
                 >
                   {link.name}
@@ -46,7 +48,7 @@ const MobileNav = () => {
                 <span
                   className={cn(
                     'absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
-                    isActive ? 'w-full' : 'w-0 group-hover:w-full'
+                    isActive ? 'w-full' : 'w-0 group-active:w-full'
                   )}
                   style={{ transformOrigin: 'left center' }}
                 ></span>

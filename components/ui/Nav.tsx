@@ -17,7 +17,7 @@ const Nav = () => {
             <span
               className={cn(
                 'font-medium capitalize transition-all',
-                isActive ? 'text-accent' : 'group-hover:text-accent'
+                isActive ? 'text-neon-accent' : 'group-hover:text-neon-accent'
               )}
             >
               {link.name}

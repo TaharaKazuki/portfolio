@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import { customNeonColor } from './lib/customNeonColor';
+import { customNeonColor, customNeonText } from './lib/customNeonColor';
 
 const config = {
   darkMode: ['class'],
@@ -50,7 +50,7 @@ const config = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate'), customNeonColor],
+  plugins: [require('tailwindcss-animate'), customNeonColor, customNeonText],
 } satisfies Config;
 
 export default config;
