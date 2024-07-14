@@ -6,7 +6,7 @@ const Photo = () => {
   return (
     <div className="relative size-full">
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
+        initial={{ y: -100, opacity: 0 }}
         animate={{
           y: 0,
           opacity: 1,
@@ -14,9 +14,9 @@ const Photo = () => {
         }}
       >
         <motion.div
-          initial={{ x: -100, opacity: 0 }}
+          initial={{ y: 100, opacity: 0 }}
           animate={{
-            x: 0,
+            y: 0,
             opacity: 1,
             transition: { delay: 2.5, duration: 0.4, ease: 'linear' },
           }}
