@@ -9,7 +9,7 @@ const HomePage = () => {
     <section className="h-full">
       <div className="container mx-auto h-full">
         <div className="flex flex-col items-center justify-between xl:flex-row xl:pb-24 xl:pt-8">
-          <div className="text-center xl:text-left">
+          <div className="order-2 text-center xl:order-none xl:text-left">
             <span className="text-xl">Frontend Developer</span>
             <h1 className="h1 mb-6">
               Hello I&apos;m <br />
@@ -33,7 +33,7 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div>
+          <div className="order-1 mb-8 xl:order-none xl:mb-0">
             <Photo />
           </div>
         </div>
