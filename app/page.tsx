@@ -26,6 +26,7 @@ const HomePage = () => {
                 <span>Download PDF</span>
                 <FiDownload className="text-xl" />
               </Button>
+              <div className="mb-8 xl:mb-0"></div>
             </div>
           </div>
           <div>Photo</div>

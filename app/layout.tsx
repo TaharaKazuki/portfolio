@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import type { Metadata } from 'next';
-import { Noto_Sans_JP, Chakra_Petch } from 'next/font/google';
+import { Noto_Sans_JP, Rajdhani } from 'next/font/google';
 
 import './globals.css';
 import Header from '@/components/Header';
 import PageTransition from '@/components/PageTransition';
 import StairTransition from '@/components/StairTransition';
 
-const chakraPetch = Chakra_Petch({
+//TODO fontは後で考える
+const chakraPetch = Rajdhani({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-chakraPetch',
