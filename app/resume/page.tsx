@@ -219,7 +219,7 @@ const ResumePage = () => {
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
+        transition: { delay: 3, duration: 0.4, ease: 'easeIn' },
       }}
       className="flex min-h-[80vh] items-center justify-center py-12 xl:py-0"
     >
