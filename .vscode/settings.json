@@ -13,15 +13,20 @@
   "cSpell.words": [
     "Canva",
     "Chakra",
+    "Chakraui",
     "classname",
     "clsx",
     "countup",
+    "Cssmodules",
     "jetbrains",
     "lucide",
     "Nextdotjs",
     "noto",
+    "nuxt",
+    "Nuxtdotjs",
     "Petch",
-    "tailwindcss"
+    "tailwindcss",
+    "Vuejs"
   ],
   "tailwindCSS.experimental.classRegex": [
     ["ctl\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
