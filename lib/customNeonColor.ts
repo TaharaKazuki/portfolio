@@ -31,7 +31,7 @@ export const customNeonText = (plugins: PluginAPI) => {
       if (color1 && color2) {
         neonTextUtilities[`.text-neon-${color}`] = {
           color: color1,
-          textShadow: `0 0 1px ${color1}, 0 0 1px ${color1}, 0 0 1px ${color1}, 0 0 4px ${color2}, 0 0 1px ${color1}`,
+          textShadow: `0 0 1px ${color1}, 0 0 1px ${color1}, 0 0 0px ${color1}, 0 0 0px ${color2}, 0 0 0px ${color1}`,
         };
       }
     }
