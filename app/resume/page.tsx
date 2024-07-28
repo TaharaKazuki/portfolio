@@ -18,6 +18,8 @@ import {
   SiPwa,
 } from 'react-icons/si';
 
+import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
+
 const ABOUT = {
   title: 'About me',
   description:
@@ -208,7 +210,29 @@ const SKILLS = {
 };
 
 const ResumePage = () => {
-  return <div>ResumePage</div>;
+  return (
+    <div className="flex min-h-[80vh] items-center justify-center py-12 xl:py-0">
+      <div className="container mx-auto">
+        <Tabs
+          defaultValue="experience"
+          className="flex flex-col gap-[60px] xl:flex-row"
+        >
+          <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
+            <TabsTrigger value="experience">Experience</TabsTrigger>
+            <TabsTrigger value="education">Education</TabsTrigger>
+            <TabsTrigger value="skills">Skills</TabsTrigger>
+            <TabsTrigger value="about">About me</TabsTrigger>
+          </TabsList>
+
+          <div className="min-h-[70vh] w-full">
+            <TabsContent value="experience" className="w-full">
+              experience
+            </TabsContent>
+          </div>
+        </Tabs>
+      </div>
+    </div>
+  );
 };
 
 export default ResumePage;
