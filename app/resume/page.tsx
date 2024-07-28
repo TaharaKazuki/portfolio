@@ -1,3 +1,6 @@
+'use client';
+
+import { motion } from 'framer-motion';
 import {
   FaHtml5,
   FaCss3,
@@ -18,6 +21,7 @@ import {
   SiPwa,
 } from 'react-icons/si';
 
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
 
 const ABOUT = {
@@ -211,7 +215,14 @@ const SKILLS = {
 
 const ResumePage = () => {
   return (
-    <div className="flex min-h-[80vh] items-center justify-center py-12 xl:py-0">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
+      }}
+      className="flex min-h-[80vh] items-center justify-center py-12 xl:py-0"
+    >
       <div className="container mx-auto">
         <Tabs
           defaultValue="experience"
@@ -226,12 +237,45 @@ const ResumePage = () => {
 
           <div className="min-h-[70vh] w-full">
             <TabsContent value="experience" className="w-full">
-              experience
+              <div className="flex flex-col gap-[30px] text-center xl:text-left">
+                <h3 className="text-4xl font-bold">{EXPERIENCE.title}</h3>
+                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
+                  {EXPERIENCE.description}
+                </p>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
+                    {EXPERIENCE.items.map((item, i) => (
+                      <li
+                        key={i}
+                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl bg-[#232329] px-10 py-6 lg:items-start"
+                      >
+                        <span className="text-accent">{item.duration}</span>
+                        <h3 className="min-h-[60px] max-w-[260px] text-center text-xl lg:text-left">
+                          {item.position}
+                        </h3>
+                        <div className="flex items-center gap-3">
+                          <span className="size-[6px] rounded-full bg-accent neon-accent" />
+                          <p className="text-white/60">{item.company}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
+              </div>
+            </TabsContent>
+            <TabsContent value="education" className="w-full">
+              education
+            </TabsContent>
+            <TabsContent value="skills" className="w-full">
+              skills
+            </TabsContent>
+            <TabsContent value="about" className="w-full">
+              about me
             </TabsContent>
           </div>
         </Tabs>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
