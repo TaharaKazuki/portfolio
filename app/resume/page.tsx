@@ -15,6 +15,7 @@ import {
   SiExpress,
   SiCssmodules,
   SiChakraui,
+  SiPwa,
 } from 'react-icons/si';
 
 const ABOUT = {
@@ -198,6 +199,10 @@ const SKILLS = {
     {
       icon: <SiNuxtdotjs />,
       name: 'nuxt.js',
+    },
+    {
+      icon: <SiPwa />,
+      name: 'pwa',
     },
   ],
 };
