@@ -322,17 +322,17 @@ const ResumePage = () => {
                     </Fragment>
                   ))}
                 </p>
-                <ScrollArea className="h-[400px]">
+                <ScrollArea className="h-[400px] overflow-hidden">
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
                     {SKILLS.skillList.map((skill, i) => (
                       <li key={i}>
-                        <TooltipProvider delayDuration={0}>
+                        <TooltipProvider delayDuration={10}>
                           <Tooltip>
-                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] transition-all duration-300 xl:hover:neon-accent">
+                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] transition-all duration-500 xl:hover:neon-accent">
                               <TooltipContent
-                                side="top"
+                                side="bottom"
                                 align="center"
-                                className="relative top-10 block"
+                                className="relative bottom-10 block"
                               >
                                 <p className="capitalize text-neon-accent">
                                   {skill.name}
