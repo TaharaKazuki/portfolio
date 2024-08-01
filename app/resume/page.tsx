@@ -1,11 +1,5 @@
 'use client';
 
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@radix-ui/react-tooltip';
 import { motion } from 'framer-motion';
 import { Fragment } from 'react';
 import {
@@ -47,6 +41,12 @@ import { TbBrandSupabase } from 'react-icons/tb';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
+import {
+  TooltipProvider,
+  Tooltip,
+  TooltipTrigger,
+  TooltipContent,
+} from '@/components/ui/tooltip';
 
 // about data
 const ABOUT = {
@@ -322,7 +322,7 @@ const ResumePage = () => {
                     </Fragment>
                   ))}
                 </p>
-                <ScrollArea className="h-[400px] overflow-hidden">
+                <ScrollArea className="relative z-50 h-[400px] overflow-hidden">
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
                     {SKILLS.skillList.map((skill, i) => (
                       <li key={i}>
@@ -332,7 +332,7 @@ const ResumePage = () => {
                               <TooltipContent
                                 side="bottom"
                                 align="center"
-                                className="relative bottom-10 block"
+                                className="relative bottom-10 z-10 block"
                               >
                                 <p className="capitalize text-neon-accent">
                                   {skill.name}
