@@ -311,30 +311,32 @@ const ResumePage = () => {
                 <p className="mx-auto max-w-screen-sm text-white/60 xl:mx-0">
                   {SKILLS.description}
                 </p>
-                <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
-                  {SKILLS.skillList.map((skill, i) => (
-                    <li key={i}>
-                      <TooltipProvider delayDuration={10}>
-                        <Tooltip>
-                          <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] hover:neon-accent">
-                            <TooltipContent
-                              side="top"
-                              align="center"
-                              className="relative top-10 block"
-                            >
-                              <p className="capitalize text-neon-accent">
-                                {skill.name}
-                              </p>
-                            </TooltipContent>
-                            <div className="text-6xl transition-all duration-300 group-hover:text-neon-accent">
-                              {skill.icon}
-                            </div>
-                          </TooltipTrigger>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </li>
-                  ))}
-                </ul>
+                <ScrollArea className="h-[400px]">
+                  <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
+                    {SKILLS.skillList.map((skill, i) => (
+                      <li key={i}>
+                        <TooltipProvider delayDuration={10}>
+                          <Tooltip>
+                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] hover:neon-accent">
+                              <TooltipContent
+                                side="top"
+                                align="center"
+                                className="relative top-10 block"
+                              >
+                                <p className="capitalize text-neon-accent">
+                                  {skill.name}
+                                </p>
+                              </TooltipContent>
+                              <div className="text-6xl group-hover:text-neon-accent">
+                                {skill.icon}
+                              </div>
+                            </TooltipTrigger>
+                          </Tooltip>
+                        </TooltipProvider>
+                      </li>
+                    ))}
+                  </ul>
+                </ScrollArea>
               </div>
             </TabsContent>
 
