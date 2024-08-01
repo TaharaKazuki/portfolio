@@ -104,7 +104,7 @@ const EXPERIENCE = {
       duration: '2017 - 2018',
     },
     {
-      company: '制作会社',
+      company: 'Web制作会社',
       position: 'Frontend Developer',
       duration: '2016 - 2017',
     },
