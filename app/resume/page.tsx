@@ -41,12 +41,6 @@ import { TbBrandSupabase } from 'react-icons/tb';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
-import {
-  TooltipProvider,
-  Tooltip,
-  TooltipTrigger,
-  TooltipContent,
-} from '@/components/ui/tooltip';
 
 // about data
 const ABOUT = {
@@ -322,28 +316,18 @@ const ResumePage = () => {
                     </Fragment>
                   ))}
                 </p>
-                <ScrollArea className="relative z-50 h-[400px] overflow-hidden">
+                <ScrollArea className="relative z-50 h-[400px] overflow-auto">
                   <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
                     {SKILLS.skillList.map((skill, i) => (
-                      <li key={i}>
-                        <TooltipProvider delayDuration={10}>
-                          <Tooltip>
-                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] transition-all duration-500 xl:hover:neon-accent">
-                              <TooltipContent
-                                side="bottom"
-                                align="center"
-                                className="relative bottom-10 z-10 block"
-                              >
-                                <p className="capitalize text-neon-accent">
-                                  {skill.name}
-                                </p>
-                              </TooltipContent>
-                              <div className="text-6xl group-hover:xl:text-neon-accent">
-                                {skill.icon}
-                              </div>
-                            </TooltipTrigger>
-                          </Tooltip>
-                        </TooltipProvider>
+                      <li key={i} className="relative">
+                        <div className="group flex h-[150px] flex-col items-center justify-center rounded-xl bg-[#232329] transition-all duration-500 xl:hover:neon-accent">
+                          <div className="text-7xl group-hover:xl:text-neon-accent">
+                            {skill.icon}
+                          </div>
+                          <div className="absolute bottom-2 text-base capitalize opacity-0 transition-opacity duration-500 text-neon-accent xl:group-hover:opacity-100">
+                            {skill.name}
+                          </div>
+                        </div>
                       </li>
                     ))}
                   </ul>
