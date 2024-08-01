@@ -16,6 +16,12 @@ import {
   FaReact,
   FaNodeJs,
   FaVuejs,
+  FaYarn,
+  FaNpm,
+  FaGithub,
+  FaGitlab,
+  FaAws,
+  FaDocker,
 } from 'react-icons/fa';
 import {
   SiTailwindcss,
@@ -26,6 +32,13 @@ import {
   SiCssmodules,
   SiChakraui,
   SiPwa,
+  SiJest,
+  SiPlaywright,
+  SiGithubactions,
+  SiServerless,
+  SiVercel,
+  SiFirebase,
+  SiFramer,
 } from 'react-icons/si';
 import { TbBrandSupabase } from 'react-icons/tb';
 
@@ -35,10 +48,9 @@ import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
 // about data
 const ABOUT = {
   title: 'About me',
-  description: '私についてです',
   info: [
     {
-      fieldName: 'Name',
+      fieldName: 'Nick Name',
       fieldValue: 'DK',
     },
     {
@@ -47,15 +59,19 @@ const ABOUT = {
     },
     {
       fieldName: 'Nationality',
-      fieldValue: 'Japan',
+      fieldValue: 'Japanese',
+    },
+    {
+      fieldName: 'Address',
+      fieldValue: 'Chiba',
     },
     {
       fieldName: 'Hobby',
-      fieldValue: 'Cooking',
+      fieldValue: 'Cooking / Training',
     },
     {
-      fieldName: 'Freelance',
-      fieldValue: 'Not Available',
+      fieldName: 'Side Job',
+      fieldValue: 'Negotiable',
     },
     {
       fieldName: 'Languages',
@@ -71,29 +87,34 @@ const EXPERIENCE = {
     '大学を卒業後、営業職に従事した後にエンジニアにジョブチェンジし現在に至ります。',
   items: [
     {
-      company: 'Tech Solutions Inc.',
-      position: 'Full Stack Developer',
-      duration: '2022 - Present',
+      company: '福祉・介護系事業会社',
+      position: 'FrontEnd Developer',
+      duration: '2024 - Present',
     },
     {
-      company: 'Web Design Studio',
-      position: 'Front-End Developer Intern',
-      duration: 'Summer 2021',
+      company: 'Freelance Developer',
+      position: 'FrontEnd Developer',
+      duration: '2022 - 2024',
     },
     {
-      company: 'E-commerce Startup',
-      position: 'Freelance Web Developer',
-      duration: '2020 - 2021',
+      company: '英会話学習系事業会社',
+      position: 'FrontEnd Developer',
+      duration: '2018 - 2021',
     },
     {
-      company: 'Tech Academy',
-      position: 'Teaching Assistant',
-      duration: '2019 - 2020',
+      company: 'SES常駐開発',
+      position: 'Frontend Developer',
+      duration: '2017 - 2018',
     },
     {
-      company: 'Digital Agency',
-      position: 'UI/UX Designer',
-      duration: '2018 - 2019',
+      company: '制作会社',
+      position: 'Frontend Developer',
+      duration: '2016 - 2017',
+    },
+    {
+      company: '金銭処理機メーカー',
+      position: 'Sales',
+      duration: '2012 - 2015',
     },
     {
       company: '近畿大学',
@@ -107,7 +128,7 @@ const EXPERIENCE = {
 const SKILLS = {
   title: 'My skills',
   description:
-    '各技術について業務・自己学習において開発経験があります。\n（Supabase以外は業務経験あり）',
+    '各技術について業務・自己学習において開発経験があります。（順不同）\n ※SupabaseとVercel以外は業務での経験があります。',
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -118,36 +139,12 @@ const SKILLS = {
       name: 'css 3',
     },
     {
-      icon: <FaSass />,
-      name: 'sass',
-    },
-    {
-      icon: <SiCssmodules />,
-      name: 'css modules',
-    },
-    {
-      icon: <SiTailwindcss />,
-      name: 'tailwind.css',
-    },
-    {
-      icon: <SiChakraui />,
-      name: 'chakra ui',
-    },
-    {
       icon: <FaJs />,
       name: 'javascript',
     },
     {
       icon: <SiTypescript />,
       name: 'typescript',
-    },
-    {
-      icon: <FaNodeJs />,
-      name: 'node.js',
-    },
-    {
-      icon: <SiExpress />,
-      name: 'express.js',
     },
     {
       icon: <FaReact />,
@@ -166,12 +163,88 @@ const SKILLS = {
       name: 'nuxt.js',
     },
     {
+      icon: <FaNodeJs />,
+      name: 'node.js',
+    },
+    {
+      icon: <SiExpress />,
+      name: 'express.js',
+    },
+    {
+      icon: <FaSass />,
+      name: 'sass',
+    },
+    {
+      icon: <SiCssmodules />,
+      name: 'css modules',
+    },
+    {
+      icon: <SiTailwindcss />,
+      name: 'tailwind.css',
+    },
+    {
+      icon: <SiChakraui />,
+      name: 'chakra ui',
+    },
+    {
+      icon: <SiFramer />,
+      name: 'Framer motion',
+    },
+    {
+      icon: <SiJest />,
+      name: 'jest',
+    },
+    {
+      icon: <SiPlaywright />,
+      name: 'playwright',
+    },
+    {
+      icon: <FaNpm />,
+      name: 'npm',
+    },
+    {
+      icon: <FaYarn />,
+      name: 'yarn',
+    },
+    {
+      icon: <FaDocker />,
+      name: 'docker',
+    },
+    {
       icon: <SiPwa />,
       name: 'pwa',
     },
     {
+      icon: <FaGithub />,
+      name: 'Github',
+    },
+    {
+      icon: <SiGithubactions />,
+      name: 'Github Actions',
+    },
+    {
+      icon: <FaGitlab />,
+      name: 'Gitlab',
+    },
+    {
+      icon: <FaAws />,
+      name: 'aws',
+    },
+    {
+      icon: <SiServerless />,
+      name: 'serverless framework',
+    },
+    {
+      icon: <SiFirebase />,
+      name: 'firebase',
+    },
+    {
       icon: <TbBrandSupabase />,
       name: 'supabase',
+    },
+    {
+      icon: <SiVercel />,
+      name: 'vercel',
     },
   ],
 };
@@ -275,9 +348,6 @@ const ResumePage = () => {
             >
               <div className="flex flex-col gap-[30px]">
                 <h3 className="text-4xl font-bold">{ABOUT.title}</h3>
-                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
-                  {ABOUT.description}
-                </p>
                 <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-y-6 xl:mx-0 xl:grid-cols-2">
                   {ABOUT.info.map((item, i) => (
                     <li
