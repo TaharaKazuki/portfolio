@@ -66,10 +66,9 @@ const ABOUT = {
 
 // experience data
 const EXPERIENCE = {
-  icon: '/assets/resume/badge.svg',
   title: 'My experience',
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.',
+    '大学を卒業後、営業職に従事した後にエンジニアにジョブチェンジし現在に至ります。',
   items: [
     {
       company: 'Tech Solutions Inc.',
@@ -97,9 +96,9 @@ const EXPERIENCE = {
       duration: '2018 - 2019',
     },
     {
-      company: 'Software Development Firm',
-      position: 'Junior Developer',
-      duration: '2017 - 2018',
+      company: '近畿大学',
+      position: '法学部法律学科',
+      duration: '2012年3月 卒業',
     },
   ],
 };
@@ -239,7 +238,7 @@ const ResumePage = () => {
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{EXPERIENCE.title}</h3>
-                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
+                <p className="mx-auto max-w-screen-sm text-white/60 xl:mx-0">
                   {EXPERIENCE.description}
                 </p>
                 <ScrollArea className="h-[400px]">
