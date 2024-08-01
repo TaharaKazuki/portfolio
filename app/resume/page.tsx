@@ -321,10 +321,10 @@ const ResumePage = () => {
                     {SKILLS.skillList.map((skill, i) => (
                       <li key={i} className="relative">
                         <div className="group flex h-[150px] flex-col items-center justify-center rounded-xl bg-[#232329] transition-all duration-500 xl:hover:neon-accent">
-                          <div className="text-7xl group-hover:xl:text-neon-accent">
+                          <div className="text-6xl group-hover:xl:text-neon-accent">
                             {skill.icon}
                           </div>
-                          <div className="absolute bottom-2 text-base capitalize opacity-0 transition-opacity duration-500 text-neon-accent xl:group-hover:opacity-100">
+                          <div className="absolute bottom-2 text-base capitalize opacity-100 transition-opacity duration-500 text-neon-accent xl:opacity-0 xl:group-hover:opacity-100">
                             {skill.name}
                           </div>
                         </div>
