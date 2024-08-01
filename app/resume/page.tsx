@@ -312,12 +312,12 @@ const ResumePage = () => {
                   {SKILLS.description}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
+                  <ul className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px]">
                     {SKILLS.skillList.map((skill, i) => (
                       <li key={i}>
-                        <TooltipProvider delayDuration={10}>
+                        <TooltipProvider delayDuration={0}>
                           <Tooltip>
-                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] hover:neon-accent">
+                            <TooltipTrigger className="group flex h-[150px] w-full items-center justify-center rounded-xl bg-[#232329] transition-all duration-300 xl:hover:neon-accent">
                               <TooltipContent
                                 side="top"
                                 align="center"
@@ -327,7 +327,7 @@ const ResumePage = () => {
                                   {skill.name}
                                 </p>
                               </TooltipContent>
-                              <div className="text-6xl group-hover:text-neon-accent">
+                              <div className="text-6xl group-hover:xl:text-neon-accent">
                                 {skill.icon}
                               </div>
                             </TooltipTrigger>
