@@ -39,6 +39,9 @@ import {
   SiVercel,
   SiFirebase,
   SiFramer,
+  SiVite,
+  SiVitest,
+  SiStorybook,
 } from 'react-icons/si';
 import { TbBrandSupabase } from 'react-icons/tb';
 
@@ -92,7 +95,7 @@ const EXPERIENCE = {
       duration: '2024 - Present',
     },
     {
-      company: 'Freelance Developer',
+      company: 'Freelance',
       position: 'FrontEnd Developer',
       duration: '2022 - 2024',
     },
@@ -102,7 +105,7 @@ const EXPERIENCE = {
       duration: '2018 - 2021',
     },
     {
-      company: 'SES常駐開発',
+      company: 'SES常駐開発会社',
       position: 'Frontend Developer',
       duration: '2017 - 2018',
     },
@@ -115,11 +118,6 @@ const EXPERIENCE = {
       company: '金銭処理機メーカー',
       position: 'Sales',
       duration: '2012 - 2015',
-    },
-    {
-      company: '近畿大学',
-      position: '法学部法律学科',
-      duration: '2012年3月 卒業',
     },
   ],
 };
@@ -191,14 +189,6 @@ const SKILLS = {
       name: 'Framer motion',
     },
     {
-      icon: <SiJest />,
-      name: 'jest',
-    },
-    {
-      icon: <SiPlaywright />,
-      name: 'playwright',
-    },
-    {
       icon: <FaNpm />,
       name: 'npm',
     },
@@ -207,12 +197,32 @@ const SKILLS = {
       name: 'yarn',
     },
     {
+      icon: <SiVite />,
+      name: 'vite',
+    },
+    {
       icon: <FaDocker />,
       name: 'docker',
     },
     {
       icon: <SiPwa />,
       name: 'pwa',
+    },
+    {
+      icon: <SiStorybook />,
+      name: 'storybook',
+    },
+    {
+      icon: <SiJest />,
+      name: 'jest',
+    },
+    {
+      icon: <SiVitest />,
+      name: 'Vitest',
+    },
+    {
+      icon: <SiPlaywright />,
+      name: 'playwright',
     },
     {
       icon: <FaGithub />,

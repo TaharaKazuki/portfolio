@@ -10,7 +10,7 @@ const SERVICES_INFO = [
     ),
     title: 'Frontend Development',
     description:
-      'Frontend領域の開発全般が行えます。最近はNext.js+TypeScriptを主に使用しております。',
+      'Frontend領域の開発全般が行えます。最近はNext.js+TypeScriptを主に使用しており、当サイトについてもNext.js+TypeScriptで作成しております。',
   },
   {
     icon: (
