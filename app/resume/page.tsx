@@ -7,6 +7,7 @@ import {
   TooltipContent,
 } from '@radix-ui/react-tooltip';
 import { motion } from 'framer-motion';
+import { Fragment } from 'react';
 import {
   FaHtml5,
   FaCss3,
@@ -31,42 +32,34 @@ import { TbBrandSupabase } from 'react-icons/tb';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsTrigger, TabsList, TabsContent } from '@/components/ui/tabs';
 
+// about data
 const ABOUT = {
   title: 'About me',
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.',
+  description: '私についてです',
   info: [
     {
       fieldName: 'Name',
-      fieldValue: 'Luke Coleman',
-    },
-    {
-      fieldName: 'Phone',
-      fieldValue: '(+40) 321 654 678',
+      fieldValue: 'DK',
     },
     {
       fieldName: 'Experience',
-      fieldValue: '12+ Years',
-    },
-    {
-      fieldName: 'Skype',
-      fieldValue: 'luke.01',
+      fieldValue: '9+ Years',
     },
     {
       fieldName: 'Nationality',
-      fieldValue: 'American',
+      fieldValue: 'Japan',
     },
     {
-      fieldName: 'Email',
-      fieldValue: 'luke.01@gmail.com',
+      fieldName: 'Hobby',
+      fieldValue: 'Cooking',
     },
     {
       fieldName: 'Freelance',
-      fieldValue: 'Available',
+      fieldValue: 'Not Available',
     },
     {
       fieldName: 'Languages',
-      fieldValue: 'English, Spanish',
+      fieldValue: 'Japanese',
     },
   ],
 };
@@ -110,51 +103,11 @@ const EXPERIENCE = {
   ],
 };
 
-// education data
-const EDUCATION = {
-  icon: '/assets/resume/cap.svg',
-  title: 'My education',
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.',
-  items: [
-    {
-      institution: 'Online Course Platform',
-      degree: 'Full Stack Web Development Bootcamp',
-      duration: '2023',
-    },
-    {
-      institution: 'Codecademy',
-      degree: 'Front-end Track',
-      duration: '2022',
-    },
-    {
-      institution: 'Online Course',
-      degree: 'Programming Course',
-      duration: '2020 - 2021',
-    },
-    {
-      institution: 'Tech Institute',
-      degree: 'Certified Web Developer',
-      duration: '2019',
-    },
-    {
-      institution: 'Design School',
-      degree: 'Diploma in Graphic Design',
-      duration: '2016 - 2018',
-    },
-    {
-      institution: 'Community College',
-      degree: 'Associate Degree in Computer Science',
-      duration: '2014 - 2016',
-    },
-  ],
-};
-
 // skills data
 const SKILLS = {
   title: 'My skills',
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quibusdam, sunt explicabo inventore.',
+    '各技術について業務・自己学習において開発経験があります。\n（Supabase以外は業務経験あり）',
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -240,7 +193,6 @@ const ResumePage = () => {
         >
           <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
             <TabsTrigger value="experience">Experience</TabsTrigger>
-            <TabsTrigger value="education">Education</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
@@ -275,44 +227,20 @@ const ResumePage = () => {
               </div>
             </TabsContent>
 
-            {/* Education */}
-            <TabsContent value="education" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{EDUCATION.title}</h3>
-                <p className="mx-auto max-w-screen-sm text-white/60 xl:mx-0">
-                  {EDUCATION.description}
-                </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
-                    {EDUCATION.items.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl bg-[#232329] px-10 py-6 lg:items-start"
-                      >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="min-h-[60px] max-w-[260px] text-center text-xl lg:text-left">
-                          {item.degree}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="size-[6px] rounded-full bg-accent neon-accent" />
-                          <p className="text-white/60">{item.institution}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
-              </div>
-            </TabsContent>
-
             {/* Skills */}
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{SKILLS.title}</h3>
-                <p className="mx-auto max-w-screen-sm text-white/60 xl:mx-0">
-                  {SKILLS.description}
+                <p className="mx-auto max-w-screen-sm whitespace-pre-line text-white/60 xl:mx-0">
+                  {SKILLS.description.split('\n').map((line, index) => (
+                    <Fragment key={index}>
+                      {line}
+                      <br />
+                    </Fragment>
+                  ))}
                 </p>
                 <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-2 gap-4 p-5 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px]">
+                  <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 xl:gap-[25px] xl:p-5">
                     {SKILLS.skillList.map((skill, i) => (
                       <li key={i}>
                         <TooltipProvider delayDuration={0}>
@@ -341,31 +269,26 @@ const ResumePage = () => {
             </TabsContent>
 
             {/* About */}
-            <TabsContent value="about" className="w-full">
-              <div className="flex flex-col gap-[30px] text-center xl:text-left">
-                <h3 className="text-4xl font-bold">{EXPERIENCE.title}</h3>
-                <p className="mx-auto max-w-screen-sm text-white/60 xl:mx-0">
-                  {EXPERIENCE.description}
+            <TabsContent
+              value="about"
+              className="w-full text-center xl:text-left"
+            >
+              <div className="flex flex-col gap-[30px]">
+                <h3 className="text-4xl font-bold">{ABOUT.title}</h3>
+                <p className="mx-auto max-w-[600px] text-white/60 xl:mx-0">
+                  {ABOUT.description}
                 </p>
-                <ScrollArea className="h-[400px]">
-                  <ul className="grid grid-cols-1 gap-[30px] lg:grid-cols-2">
-                    {EXPERIENCE.items.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex h-[184px] flex-col items-center justify-center gap-1 rounded-xl bg-[#232329] px-10 py-6 lg:items-start"
-                      >
-                        <span className="text-accent">{item.duration}</span>
-                        <h3 className="min-h-[60px] max-w-[260px] text-center text-xl lg:text-left">
-                          {item.position}
-                        </h3>
-                        <div className="flex items-center gap-3">
-                          <span className="size-[6px] rounded-full bg-accent neon-accent" />
-                          <p className="text-white/60">{item.company}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </ScrollArea>
+                <ul className="mx-auto grid max-w-[620px] grid-cols-1 gap-y-6 xl:mx-0 xl:grid-cols-2">
+                  {ABOUT.info.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-center justify-center gap-4 xl:justify-start"
+                    >
+                      <span className="text-white/60">{item.fieldName}</span>
+                      <span className="text-xl">{item.fieldValue}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </TabsContent>
           </div>
