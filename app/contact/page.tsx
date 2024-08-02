@@ -2,7 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 
 import { FormSchema, formSchema } from './_schema';
 import { ErrorMessage } from '@/components/errorMessage';
@@ -23,6 +23,7 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -43,7 +44,6 @@ const ContactPage = () => {
     >
       <div className="container mx-auto">
         <div className="flex flex-col gap-[30px] xl:flex-row">
-          {/* form */}
           <div className="mx-auto w-full">
             <form
               onSubmit={handleSubmit(onSubmit)}
@@ -92,20 +92,32 @@ const ContactPage = () => {
                 </div>
               </div>
               <div>
-                <Select {...register('inquiry')}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Inquiry item" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Inquiry item</SelectLabel>
-                      <SelectItem value="web">Web Development</SelectItem>
-                      <SelectItem value="mobile">Mobile Development</SelectItem>
-                      <SelectItem value="logo">Logo Design</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
+                <Controller
+                  name="inquiry"
+                  control={control}
+                  render={({ field }) => (
+                    <Select
+                      {...field}
+                      onValueChange={field.onChange}
+                      defaultValue={field.value}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Inquiry item" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectGroup>
+                          <SelectLabel>Inquiry item</SelectLabel>
+                          <SelectItem value="web">Web Development</SelectItem>
+                          <SelectItem value="mobile">
+                            Mobile Development
+                          </SelectItem>
+                          <SelectItem value="logo">Logo Design</SelectItem>
+                          <SelectItem value="other">Other</SelectItem>
+                        </SelectGroup>
+                      </SelectContent>
+                    </Select>
+                  )}
+                />
                 <ErrorMessage message={errors.inquiry?.message} />
               </div>
               <div>
