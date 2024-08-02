@@ -23,6 +23,7 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
+    setValue,
     setFocus,
     formState: { errors },
   } = useForm<FormSchema>({
@@ -124,7 +125,7 @@ const ContactPage = () => {
                 </div>
               </div>
               <div>
-                <Select {...register('inquiry')}>
+                <Select onValueChange={(value) => setValue('inquiry', value)}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Inquiry item" />
                   </SelectTrigger>

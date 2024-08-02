@@ -7,7 +7,7 @@ import { CiMenuFries } from 'react-icons/ci';
 
 import Logo from './Logo';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
-import { LINKS } from '@/app/_const';
+import { MOBILE_LINKS } from '@/app/_const';
 import { cn } from '@/lib/utils';
 
 const MobileNav = () => {
@@ -26,7 +26,7 @@ const MobileNav = () => {
         </div>
 
         <nav className="flex flex-col items-stretch justify-center gap-8">
-          {LINKS.map((link, i) => {
+          {MOBILE_LINKS.map((link, i) => {
             const isActive = link.path === pathname;
             return (
               <Link
@@ -47,8 +47,8 @@ const MobileNav = () => {
                 </span>
                 <span
                   className={cn(
-                    'absolute bottom-0 left-0 h-[2px] bg-accent transition-all duration-300 neon-accent',
-                    isActive ? 'w-full' : 'w-0 group-active:w-full'
+                    'absolute bottom-0 left-0 h-[2px] bg-accent neon-accent',
+                    isActive ? 'w-full' : 'w-0'
                   )}
                   style={{ transformOrigin: 'left center' }}
                 ></span>
