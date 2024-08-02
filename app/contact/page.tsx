@@ -2,6 +2,7 @@
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 
 import { useSendMail } from './_hooks/useSendMail';
@@ -25,16 +26,20 @@ const ContactPage = () => {
     register,
     handleSubmit,
     control,
-    // reset,
+    reset,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
   });
 
   const { sendMail } = useSendMail();
+  const [isLoading, setIsLoading] = useState(false);
+
   const onSubmit = async (data: FormSchema) => {
-    await sendMail(data);
-    // reset();
+    setIsLoading(true);
+    await sendMail(data)
+      .then(() => reset())
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -136,8 +141,9 @@ const ContactPage = () => {
                 <Button
                   variant={'outline'}
                   className="w-40 items-center text-white xl:hover:bg-accent xl:hover:text-primary"
+                  disabled={isLoading}
                 >
-                  Send
+                  {isLoading ? 'Sending...' : 'Send'}
                 </Button>
               </div>
             </form>
