@@ -102,11 +102,11 @@ const ContactPage = () => {
                       defaultValue={field.value}
                     >
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Inquiry item" />
+                        <SelectValue placeholder="Select Inquiry" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectGroup>
-                          <SelectLabel>Inquiry item</SelectLabel>
+                          <SelectLabel>Select Inquiry Item</SelectLabel>
                           <SelectItem value="web">Web Development</SelectItem>
                           <SelectItem value="mobile">
                             Mobile Development
