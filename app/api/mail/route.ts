@@ -1,6 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { createTransport } from 'nodemailer';
 
+import { FormSchema } from '@/app/contact/_schema';
+
 export const POST = async (req: NextRequest) => {
   try {
     const transporter = createTransport({
@@ -14,7 +16,7 @@ export const POST = async (req: NextRequest) => {
     });
 
     const { firstname, lastname, email, phone, inquiry, details } =
-      await req.json();
+      (await req.json()) as FormSchema;
 
     const message = `
       名前: ${firstname} ${lastname}
@@ -32,7 +34,7 @@ export const POST = async (req: NextRequest) => {
     await transporter.sendMail({
       from: process.env.MAIL_FROM,
       to: process.env.MAIL_TO,
-      subject: 'お問い合わせ',
+      subject: 'Portfolioからのお問い合わせ',
       text: message,
     });
 
