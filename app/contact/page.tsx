@@ -4,8 +4,9 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { motion } from 'framer-motion';
 import { useForm, Controller } from 'react-hook-form';
 
+import { useSendMail } from './_hooks/useSendMail';
 import { FormSchema, formSchema } from './_schema';
-import { ErrorMessage } from '@/components/errorMessage';
+import { ErrorMessage } from '@/components/ErrorMessage';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import {
@@ -24,15 +25,16 @@ const ContactPage = () => {
     register,
     handleSubmit,
     control,
-    reset,
+    // reset,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: FormSchema) => {
-    console.info(data);
-    reset();
+  const { sendMail } = useSendMail();
+  const onSubmit = async (data: FormSchema) => {
+    await sendMail(data);
+    // reset();
   };
 
   return (
