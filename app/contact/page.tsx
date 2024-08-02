@@ -53,49 +53,58 @@ const ContactPage = () => {
                 ご質問・ご相談については以下フォームより承っております。
               </p>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Input
-                  type="text"
-                  placeholder="Firstname"
-                  {...register('firstname')}
-                />
-                {errors.firstname && (
-                  <span className="text-xs text-accent">
-                    {errors.firstname.message}
-                  </span>
-                )}
-
-                <Input
-                  type="text"
-                  placeholder="Lastname"
-                  {...register('lastname')}
-                />
-                {errors.lastname && (
-                  <span className="text-xs text-accent">
-                    {errors.lastname.message}
-                  </span>
-                )}
-
-                <Input
-                  type="email"
-                  placeholder="Email address"
-                  {...register('email')}
-                />
-                {errors.email && (
-                  <span className="text-xs text-accent">
-                    {errors.email.message}
-                  </span>
-                )}
-
-                <Input
-                  type="tel"
-                  placeholder="Phone number"
-                  {...register('phone')}
-                />
-                {errors.phone && (
-                  <span className="text-xs text-accent">
-                    {errors.phone.message}
-                  </span>
-                )}
+                <div>
+                  <Input
+                    className="w-full"
+                    type="text"
+                    placeholder="Firstname"
+                    {...register('firstname')}
+                  />
+                  {errors.firstname && (
+                    <span className="px-2 text-xs text-accent">
+                      {errors.firstname.message}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    className="w-full"
+                    type="text"
+                    placeholder="Lastname"
+                    {...register('lastname')}
+                  />
+                  {errors.lastname && (
+                    <span className="px-2 text-xs text-accent">
+                      {errors.lastname.message}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    className="w-full"
+                    type="email"
+                    placeholder="Email address"
+                    {...register('email')}
+                  />
+                  {errors.email && (
+                    <span className="px-2 text-xs text-accent">
+                      {errors.email.message}
+                    </span>
+                  )}
+                </div>
+                <div>
+                  <Input
+                    className="w-full"
+                    type="tel"
+                    placeholder="Phone number"
+                    {...register('phone')}
+                  />
+                  {errors.phone && (
+                    <span className="px-2 text-xs text-accent">
+                      {errors.phone.message}
+                    </span>
+                  )}
+                </div>
               </div>
               <Select {...register('inquiry')}>
                 <SelectTrigger className="w-full">
@@ -112,7 +121,7 @@ const ContactPage = () => {
                 </SelectContent>
               </Select>
               {errors.inquiry && (
-                <span className="text-xs text-accent">
+                <span className="px-2 text-xs text-accent">
                   {errors.inquiry.message}
                 </span>
               )}
@@ -122,7 +131,7 @@ const ContactPage = () => {
                 {...register('details')}
               />
               {errors.details && (
-                <span className="text-xs text-accent">
+                <span className="px-2 text-xs text-accent">
                   {errors.details.message}
                 </span>
               )}
