@@ -44,7 +44,10 @@ const ContactPage = () => {
               {/* select */}
               <Select>
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a service" />
+                  <SelectValue
+                    placeholder="Select a service"
+                    className="text-accent"
+                  />
                 </SelectTrigger>
                 <SelectContent>
                   <SelectGroup>
