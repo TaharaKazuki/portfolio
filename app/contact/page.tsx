@@ -24,6 +24,7 @@ const ContactPage = () => {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -31,6 +32,7 @@ const ContactPage = () => {
 
   const onSubmit = (data: FormSchema) => {
     console.info(data);
+    reset();
   };
 
   return (
