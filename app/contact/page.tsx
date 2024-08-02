@@ -23,7 +23,6 @@ const ContactPage = () => {
   const {
     register,
     handleSubmit,
-    setValue,
     formState: { errors },
   } = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
