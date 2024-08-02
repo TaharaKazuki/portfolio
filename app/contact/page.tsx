@@ -111,11 +111,21 @@ const ContactPage = () => {
                   </SelectGroup>
                 </SelectContent>
               </Select>
+              {errors.inquiry && (
+                <span className="text-xs text-accent">
+                  {errors.inquiry.message}
+                </span>
+              )}
               <Textarea
                 className="h-[200px]"
                 placeholder="内容の詳細をご記載ください"
                 {...register('details')}
               />
+              {errors.details && (
+                <span className="text-xs text-accent">
+                  {errors.details.message}
+                </span>
+              )}
               <div className="flex justify-center sm:justify-start">
                 <Button
                   variant={'outline'}
