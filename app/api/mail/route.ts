@@ -21,7 +21,7 @@ export const POST = async (req: NextRequest) => {
 
       Email: ${email}
 
-      電話番号: ${phone}
+      電話番号: ${phone ? phone : 'no input'}
 
       お問い合わせ種別: ${inquiry}
 
