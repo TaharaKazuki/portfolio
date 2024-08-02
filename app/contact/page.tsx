@@ -122,7 +122,7 @@ const ContactPage = () => {
               </div>
               <div>
                 <Textarea
-                  className="h-[200px]"
+                  className="h-[200px] text-xs placeholder:text-xs"
                   placeholder="内容の詳細をご記載ください"
                   {...register('details')}
                 />

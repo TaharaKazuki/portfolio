@@ -21,7 +21,7 @@ export const formSchema = z.object({
   details: z
     .string()
     .min(1, { message: '1文字以上の入力が必要です。' })
-    .max(1000, { message: '1000文字以内での入力をお願いします。' }),
+    .max(2000, { message: '2000文字以内での入力をお願いします。' }),
 });
 
 export type FormSchema = z.infer<typeof formSchema>;
