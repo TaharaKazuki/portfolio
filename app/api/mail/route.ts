@@ -1,8 +1,7 @@
-import { NextApiRequest } from 'next';
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { createTransport } from 'nodemailer';
 
-export const POST = async (req: NextApiRequest) => {
+export const POST = async (req: NextRequest) => {
   try {
     const transporter = createTransport({
       service: 'gmail',
@@ -14,9 +13,8 @@ export const POST = async (req: NextApiRequest) => {
       },
     });
 
-    const { firstname, lastname, email, phone, inquiry, details } = req.body;
-
-    console.info('req', req);
+    const { firstname, lastname, email, phone, inquiry, details } =
+      await req.json();
 
     const message = `
       名前: ${firstname} ${lastname}
@@ -27,9 +25,10 @@ export const POST = async (req: NextApiRequest) => {
 
       お問い合わせ種別: ${inquiry}
 
-      お問い合わせ詳細:
+      お問い合わせ詳細
       ${details}
     `;
+
     await transporter.sendMail({
       from: process.env.MAIL_FROM,
       to: process.env.MAIL_TO,
@@ -39,6 +38,6 @@ export const POST = async (req: NextApiRequest) => {
 
     return NextResponse.json({ message: 'Success!', status: 200 });
   } catch (error) {
-    return NextResponse.json({ message: `Failed!${error}`, status: 500 });
+    return NextResponse.json({ message: `Failed! ${error}`, status: 500 });
   }
 };

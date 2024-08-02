@@ -14,9 +14,7 @@ export const useSendMail = () => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-
-      const result = await response.json();
-      console.info('Mail sent successfully:', result);
+      await response.json();
     } catch (error) {
       console.error('Failed to send mail:', error);
     }
