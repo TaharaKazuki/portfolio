@@ -41,7 +41,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 const SKILLS = {
   title: 'My skills',
   description:
-    '各技術について業務・自己学習において開発経験があります。（順不同）\n ※SupabaseとVercel以外は業務での経験があります。',
+    '各技術について業務での開発経験があります。（順不同）\n ※SupabaseとVercel以外は自己学習での経験があります。',
   skillList: [
     { icon: <FaHtml5 />, name: 'html 5' },
     { icon: <FaCss3 />, name: 'css 3' },

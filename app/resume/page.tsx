@@ -22,7 +22,7 @@ const ResumePage = () => {
           defaultValue="experience"
           className="flex flex-col gap-[60px] xl:flex-row"
         >
-          <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-6 xl:mx-0">
+          <TabsList className="mx-auto flex w-full max-w-[380px] flex-col gap-4 xl:mx-0">
             <TabsTrigger value="experience">Experience</TabsTrigger>
             <TabsTrigger value="skills">Skills</TabsTrigger>
             <TabsTrigger value="about">About me</TabsTrigger>
