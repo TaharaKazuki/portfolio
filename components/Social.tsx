@@ -1,18 +1,10 @@
 import Link from 'next/link';
-import { FaFacebookF, FaGithub } from 'react-icons/fa6';
+import { FaGithub } from 'react-icons/fa6';
 import { SiZenn } from 'react-icons/si';
 
 import { cn } from '@/lib/utils';
 
 export const socialLinks = [
-  {
-    href: 'https://www.facebook.com/profile.php?id=100007453638639',
-    icon: (
-      <FaFacebookF className="size-5 text-accent group-hover:text-accent" />
-    ),
-    text: 'Facebook',
-    textColor: 'text-accent',
-  },
   {
     href: 'https://github.com/taharakazuki',
     icon: <FaGithub className="size-6 text-accent group-hover:text-accent" />,
